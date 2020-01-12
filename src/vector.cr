@@ -20,4 +20,16 @@ class Vector
   def z
     @tup[2]
   end
+
+  def w
+    @tup[3]
+  end
+
+  def add(t : Point | Vector )
+    if t.is_a?(Point)
+      Point.new(x + t.x, y + t.y, z + t.z)
+    else
+      Vector.new(x + t.x, y + t.y, z + t.z)
+    end
+  end
 end
