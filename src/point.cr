@@ -1,21 +1,27 @@
 class Point
+  getter :tup
+
   def self.is?(tup)
     tup[3] == 1.0
   end
 
-  def initialize(tup : Tuple(Float64, Float64, Float64, Float64))
-    @tup = tup
+  def initialize(x : Float64, y : Float64, z : Float64)
+    @tup = {x, y, z, 1.0}
   end
 
-  def self.x(tup)
-    tup[0]
+  def x
+    @tup[0]
   end
 
-  def self.y(tup)
-    tup[1]
+  def y
+    @tup[1]
   end
 
-  def self.z(tup)
-    tup[2]
+  def z
+    @tup[2]
+  end
+
+  def w
+    @tup[3]
   end
 end
