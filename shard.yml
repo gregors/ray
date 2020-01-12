@@ -1,0 +1,13 @@
+name: ray
+version: 0.1.0
+
+authors:
+  - Gregory Ostermayr <<gregory.ostermayr@gmail.com>>
+
+targets:
+  ray:
+    main: src/ray.cr
+
+crystal: 0.32.1
+
+license: MIT
