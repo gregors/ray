@@ -100,4 +100,21 @@ describe Vector do
       Vector.new(1, 2, 3).normalize.magnitude.should eq 1
     end
   end
+
+  describe "dot product" do
+    it "returns a scalar" do
+      v1 = Vector.new(1, 2, 3)
+      v2 = Vector.new(2, 3, 4)
+      v1.dot(v2).should eq 20
+    end
+  end
+
+  describe "cross product" do
+    it "returns a vector" do
+      v1 = Vector.new(1, 2, 3)
+      v2 = Vector.new(2, 3, 4)
+      v1.cross(v2).should eq Vector.new(-1, 2, -1)
+      v2.cross(v1).should eq Vector.new(1, -2, 1)
+    end
+  end
 end

@@ -64,4 +64,14 @@ class Vector
     mag = magnitude
     Vector.new(x/mag, y/mag, z/mag)
   end
+
+  def dot(other : Vector)
+    x * other.x + y * other.y + z * other.z
+  end
+
+  def cross(v : Vector)
+    Vector.new(y * v.z - z * v.y,
+               z * v.x - x * v.z,
+               x * v.y - y * v.x)
+  end
 end
