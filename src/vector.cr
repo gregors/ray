@@ -40,4 +40,12 @@ class Vector
   def -
     Vector.new(0 - x, 0 - y, 0 - z)
   end
+
+  def *(scalar : Float64)
+    Vector.new(x * scalar, y * scalar, z * scalar)
+  end
+
+  def /(scalar : Float64)
+    Vector.new(x / scalar, y / scalar, z / scalar)
+  end
 end

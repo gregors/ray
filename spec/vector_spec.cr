@@ -10,12 +10,12 @@ describe Vector do
     v.w.should eq 0.0
   end
 
- it "tuple with w=0.0 is a vector" do
+  it "tuple with w=0.0 is a vector" do
     tup = {4.3, -4.2, 3.1, 0.0}
     Vector.is?(tup).should eq true
   end
 
- it "tuple without w=0.0 is not a vector" do
+  it "tuple without w=0.0 is not a vector" do
     tup = {4.3, -4.2, 3.1, 1.0}
     Vector.is?(tup).should eq false
   end
@@ -52,11 +52,33 @@ describe Vector do
     end
   end
 
- describe "negating a vector" do
+  describe "negating a vector" do
     it "subtracting a vector from the zero vector" do
       v = Vector.new(1, -2, 3)
       v2 = -v
       v2.tup.should eq({-1, 2, -3, 0.0})
     end
- end
+  end
+
+  describe "multiply a vector" do
+    it "by a scalar" do
+      v = Vector.new(1, -2, 3)
+      v2 = v * 3.5
+      v2.tup.should eq({3.5, -7, 10.5, 0.0})
+    end
+
+    it "by a fraction" do
+      v = Vector.new(1, -2, 3)
+      v2 = v * 0.5
+      v2.tup.should eq({0.5, -1, 1.5, 0.0})
+    end
+  end
+
+  describe "divide a vector" do
+    it "by a scalar" do
+      v = Vector.new(1, -2, 3)
+      v2 = v / 2
+      v2.tup.should eq({0.5, -1, 1.5, 0.0})
+    end
+  end
 end
