@@ -48,4 +48,8 @@ class Vector
   def /(scalar : Float64)
     Vector.new(x / scalar, y / scalar, z / scalar)
   end
+
+  def magnitude
+    ( x**2 + y**2 + z**2 + w**2) ** 0.5
+  end
 end

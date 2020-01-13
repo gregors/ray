@@ -81,4 +81,14 @@ describe Vector do
       v2.tup.should eq({0.5, -1, 1.5, 0.0})
     end
   end
+
+  describe "magnitude of a vector" do
+    it "finds the magnitue" do
+      Vector.new(1, 0, 0).magnitude.should eq 1
+      Vector.new(0, 1, 0).magnitude.should eq 1
+      Vector.new(0, 0, 1).magnitude.should eq 1
+      Vector.new(1, 2, 3).magnitude.should eq Math.sqrt(14)
+      Vector.new(-1, -2, -3).magnitude.should eq Math.sqrt(14)
+    end
+  end
 end
