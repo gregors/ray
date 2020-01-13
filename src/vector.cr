@@ -36,4 +36,8 @@ class Vector
   def sub(v : Vector)
     Vector.new(x - v.x, y - v.y, z - v.z)
   end
+
+  def -
+    Vector.new(0 - x, 0 - y, 0 - z)
+  end
 end

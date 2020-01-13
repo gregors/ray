@@ -43,5 +43,20 @@ describe Vector do
       v3 = v1.sub(v2)
       v3.tup.should eq({-2, -4, -6, 0.0})
     end
+
+    it "subtracting a vector from the zero vector" do
+      zero = Vector.new(0, 0, 0)
+      v = Vector.new(1, -2, 3)
+      v2 = zero.sub(v)
+      v2.tup.should eq({-1, 2, -3, 0.0})
+    end
   end
+
+ describe "negating a vector" do
+    it "subtracting a vector from the zero vector" do
+      v = Vector.new(1, -2, 3)
+      v2 = -v
+      v2.tup.should eq({-1, 2, -3, 0.0})
+    end
+ end
 end
