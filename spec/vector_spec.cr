@@ -91,4 +91,13 @@ describe Vector do
       Vector.new(-1, -2, -3).magnitude.should eq Math.sqrt(14)
     end
   end
+
+  describe "normalizing a vector" do
+    it "gets a unit vector" do
+      Vector.new(4, 0, 0).normalize.should eq Vector.new(1, 0, 0)
+      sqrt_14 = Math.sqrt(14)
+      Vector.new(1, 2, 3).normalize.should eq Vector.new(1/sqrt_14, 2/sqrt_14, 3/sqrt_14)
+      Vector.new(1, 2, 3).normalize.magnitude.should eq 1
+    end
+  end
 end

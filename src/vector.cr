@@ -25,6 +25,13 @@ class Vector
     @tup[3]
   end
 
+  def ==(other : Vector)
+    x == other.x &&
+      y == other.y &&
+      z == other.z &&
+      w == other.w
+  end
+
   def add(t : Point | Vector )
     if t.is_a?(Point)
       Point.new(x + t.x, y + t.y, z + t.z)
@@ -51,5 +58,10 @@ class Vector
 
   def magnitude
     ( x**2 + y**2 + z**2 + w**2) ** 0.5
+  end
+
+  def normalize
+    mag = magnitude
+    Vector.new(x/mag, y/mag, z/mag)
   end
 end
