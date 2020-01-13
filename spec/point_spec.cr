@@ -26,4 +26,20 @@ describe Point do
       p2.tup.should eq({1.0, 1.0, 6.0, 1.0})
     end
   end
+
+  describe ".sub" do
+    it "subtracting a point returns a vector" do
+      p1 = Point.new(3, 2, 1)
+      p2 = Point.new(5, 6, 7)
+      v = p1.sub(p2)
+      v.tup.should eq({-2, -4, -6, 0.0})
+    end
+
+    it "subtracting a vector returns a point (move point backwards)" do
+      p = Point.new(3, 2, 1)
+      v = Vector.new(5, 6, 7)
+      p2 = p.sub(v)
+      p2.tup.should eq({-2, -4, -6, 1.0})
+    end
+  end
 end

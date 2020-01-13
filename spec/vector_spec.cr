@@ -35,4 +35,13 @@ describe Vector do
       v3.tup.should eq({1.0, 1.0, 6.0, 0.0})
     end
   end
+
+  describe ".sub" do
+    it "subtracting a vector returns a vector - change in direction between the two" do
+      v1 = Vector.new(3, 2, 1)
+      v2 = Vector.new(5, 6, 7)
+      v3 = v1.sub(v2)
+      v3.tup.should eq({-2, -4, -6, 0.0})
+    end
+  end
 end

@@ -32,4 +32,8 @@ class Vector
       Vector.new(x + t.x, y + t.y, z + t.z)
     end
   end
+
+  def sub(v : Vector)
+    Vector.new(x - v.x, y - v.y, z - v.z)
+  end
 end

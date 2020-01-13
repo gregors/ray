@@ -28,4 +28,12 @@ class Point
   def add(v : Vector )
     Point.new(x + v.x, y + v.y, z + v.z)
   end
+
+  def sub(t : Point | Vector)
+    if t.is_a? Point
+      Vector.new(x - t.x, y - t.y, z - t.z)
+    else
+      Point.new(x - t.x, y - t.y, z - t.z)
+    end
+  end
 end
