@@ -1,5 +1,5 @@
-require "./point"
-require "./vector"
+require "../point"
+require "../vector"
 require "./projectile"
 require "./cannon_world"
 
