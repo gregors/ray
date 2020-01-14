@@ -6,7 +6,7 @@ authors:
 
 targets:
   ray:
-    main: src/ray.cr
+    main: src/cannon.cr
 
 crystal: 0.32.1
 
