@@ -1,7 +1,7 @@
 class Color
-  getter :red
-  getter :green
-  getter :blue
+  property :red
+  property :green
+  property :blue
 
   def initialize(@red : Float64, @green : Float64, @blue : Float64)
   end
