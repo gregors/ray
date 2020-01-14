@@ -37,4 +37,14 @@ describe Canvas do
       c.pixel_at(2, 3).should eq red
     end
   end
+
+  describe "#to_ppm" do
+    it "creates a PPM header" do
+      c = Canvas.new(5, 3)
+      ppm = c.to_ppm
+      ppm.lines[0].should eq "P3"
+      ppm.lines[1].should eq "5 3"
+      ppm.lines[2].should eq "255"
+    end
+  end
 end

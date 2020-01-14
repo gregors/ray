@@ -20,4 +20,8 @@ class Canvas
     c.green = color.green
     c.blue = color.blue
   end
+
+  def to_ppm
+    PPM.new(self)
+  end
 end
