@@ -1,3 +1,6 @@
+require "./PPM"
+require "./color"
+
 class Canvas
   getter :width
   getter :height

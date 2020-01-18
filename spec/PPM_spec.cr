@@ -23,6 +23,21 @@ describe PPM do
       ppm.lines[4].should eq "0 0 0 0 0 0 0 128 0 0 0 0 0 0 0"
       ppm.lines[5].should eq "0 0 0 0 0 0 0 0 0 0 0 0 0 0 255"
     end
+
+    it "splits long lines" do
+      c = Canvas.new(10, 2)
+      color = Color.new(1, 0.8, 0.6)
+      2.times do |h|
+        10.times do |w|
+          c.write_pixel(w, h, color)
+        end
+      end
+      ppm = PPM.new(c)
+      ppm.lines[3].should match /.+204$/
+      ppm.lines[4].should match /.+153$/
+      ppm.lines[5].should match /.+204$/
+      ppm.lines[6].should match /.+153$/
+    end
   end
 
   describe "to_s" do
@@ -49,8 +64,8 @@ describe PPM do
     it "splits lines longer than 70" do
       input = Array.new(25){ "12" }
       line = PPM.make_line(input)
-      line[0].size.should eq 69
-      line[1].should eq "12"
+      line[0].size.should eq 68
+      line[1].should eq "12 12"
     end
   end
 end

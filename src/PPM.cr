@@ -7,14 +7,14 @@ class PPM
 
     items.each do |item|
       if count + item.size >= 70
+        line.pop if line.last == " "
         line << "\n"
         count = 0
-      else
-        line << item
-        count += item.size
-        line << " "
-        count += 1
       end
+      line << item
+      count += item.size
+      line << " "
+      count += 1
     end
 
     line.join.strip.split("\n")
