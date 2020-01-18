@@ -1,6 +1,7 @@
 class Canvas
   getter :width
   getter :height
+  getter :canvas
 
   @canvas : Array(Array(Color))
 
@@ -22,6 +23,6 @@ class Canvas
   end
 
   def to_ppm
-    PPM.new(self)
+    PPM.new(self).to_s
   end
 end
