@@ -5,7 +5,7 @@ authors:
   - Gregory Ostermayr <<gregory.ostermayr@gmail.com>>
 
 targets:
-  ray:
+  cannon:
     main: src/cannon/cannon.cr
 
 crystal: 0.32.1
