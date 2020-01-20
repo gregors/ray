@@ -28,5 +28,34 @@ describe Matrix do
       matrix[2, 2]?.should eq 1
     end
   end
+
+  describe "equality between matrices" do
+    it "when equal returns true" do
+      a = Matrix.new({1, 2, 3, 4},
+                     {5, 6, 7, 8},
+                     {9, 8, 7, 6},
+                     {5, 4, 3, 2})
+
+      b = Matrix.new({1, 2, 3, 4},
+                     {5, 6, 7, 8},
+                     {9, 8, 7, 6},
+                     {5, 4, 3, 2})
+      a.should eq b
+    end
+
+    it "when different returns false" do
+      a = Matrix.new({1, 2, 3, 4},
+                     {5, 6, 7, 8},
+                     {9, 8, 7, 6},
+                     {5, 4, 3, 2})
+
+      b = Matrix.new({2, 3, 4, 5},
+                     {6, 7, 8, 9},
+                     {8, 7, 6, 5},
+                     {4, 3, 2, 1})
+
+      a.should_not eq b
+    end
+  end
 end
 
