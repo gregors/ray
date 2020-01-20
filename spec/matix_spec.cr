@@ -12,6 +12,21 @@ describe Matrix do
       matrix[3, 0]?.should eq 13.5
       matrix[3, 2]?.should eq 15.5
     end
+
+    it "creates 2x2 matrix" do
+      matrix = Matrix.new({-3, 5},{1, -2})
+      matrix[0, 0]?.should eq -3
+      matrix[0, 1]?.should eq 5
+      matrix[1, 0]?.should eq 1
+      matrix[1, 1]?.should eq -2
+    end
+
+    it "creates 3x3 matrix" do
+      matrix = Matrix.new({-3, 5, 0},{1, -2, -7}, {0, 1, 1})
+      matrix[0, 0]?.should eq -3
+      matrix[1, 1]?.should eq -2
+      matrix[2, 2]?.should eq 1
+    end
   end
 end
 
