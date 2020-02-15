@@ -57,5 +57,27 @@ describe Matrix do
       a.should_not eq b
     end
   end
+
+  describe "multiply 2 4x4 matrices" do
+   it "returns a new 4x4 matrix" do
+      a = Matrix.new({1, 2, 3, 4},
+                     {5, 6, 7, 8},
+                     {9, 8, 7, 6},
+                     {5, 4, 3, 2})
+
+      b = Matrix.new({-2, 1, 2, 3},
+                     {3, 2, 1, -1},
+                     {4, 3, 6, 5},
+                     {1, 2, 7, 8})
+
+      c = a * b
+
+      d = Matrix.new({20, 22, 50, 48},
+                     {44, 54, 114, 108},
+                     {40, 58, 110, 102},
+                     {16, 26, 46, 42})
+      c.should eq d
+   end
+  end
 end
 
