@@ -9,7 +9,7 @@ describe Canvas do
     end
 
     it "default pixels are black" do
-      black = Color.new(0,0,0)
+      black = Color.new(0, 0, 0)
       c = Canvas.new(10, 20)
       10.times do |w|
         20.times do |h|
@@ -28,8 +28,8 @@ describe Canvas do
 
   describe ".write_pixel" do
     it "sets the pixel color" do
-      black = Color.new(0,0,0)
-      red = Color.new(1,0,0)
+      black = Color.new(0, 0, 0)
+      red = Color.new(1, 0, 0)
 
       c = Canvas.new(10, 20)
       c.pixel_at(2, 3).should eq black

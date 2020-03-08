@@ -25,7 +25,7 @@ class Point
     @tup[3]
   end
 
-  def add(v : Vector )
+  def add(v : Vector)
     Point.new(x + v.x, y + v.y, z + v.z)
   end
 

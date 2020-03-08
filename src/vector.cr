@@ -32,7 +32,7 @@ class Vector
       w == other.w
   end
 
-  def add(t : Point | Vector )
+  def add(t : Point | Vector)
     if t.is_a?(Point)
       Point.new(x + t.x, y + t.y, z + t.z)
     else
@@ -57,7 +57,7 @@ class Vector
   end
 
   def magnitude
-    ( x**2 + y**2 + z**2 + w**2) ** 0.5
+    (x**2 + y**2 + z**2 + w**2) ** 0.5
   end
 
   def normalize
@@ -71,7 +71,7 @@ class Vector
 
   def cross(v : Vector)
     Vector.new(y * v.z - z * v.y,
-               z * v.x - x * v.z,
-               x * v.y - y * v.x)
+      z * v.x - x * v.z,
+      x * v.y - y * v.x)
   end
 end

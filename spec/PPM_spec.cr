@@ -12,9 +12,9 @@ describe PPM do
 
     it "creates PPM pixel data" do
       c = Canvas.new(5, 3)
-      c1 = Color.new(1.5,0,0)
-      c2 = Color.new(0,0.5,0)
-      c3 = Color.new(-0.5,0,1)
+      c1 = Color.new(1.5, 0, 0)
+      c2 = Color.new(0, 0.5, 0)
+      c3 = Color.new(-0.5, 0, 1)
       c.write_pixel(0, 0, c1)
       c.write_pixel(2, 1, c2)
       c.write_pixel(4, 2, c3)
@@ -43,9 +43,9 @@ describe PPM do
   describe "to_s" do
     it "terminated with a newline" do
       c = Canvas.new(5, 3)
-      c1 = Color.new(1.5,0,0)
-      c2 = Color.new(0,0.5,0)
-      c3 = Color.new(-0.5,0,1)
+      c1 = Color.new(1.5, 0, 0)
+      c2 = Color.new(0, 0.5, 0)
+      c3 = Color.new(-0.5, 0, 1)
       c.write_pixel(0, 0, c1)
       c.write_pixel(2, 1, c2)
       c.write_pixel(4, 2, c3)
@@ -62,7 +62,7 @@ describe PPM do
     end
 
     it "splits lines longer than 70" do
-      input = Array.new(25){ "12" }
+      input = Array.new(25) { "12" }
       line = PPM.make_line(input)
       line[0].size.should eq 68
       line[1].should eq "12 12"

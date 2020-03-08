@@ -10,7 +10,7 @@ class Canvas
 
   def initialize(@width : Int32, @height : Int32)
     @canvas = (0...@height).map do
-      Array.new(@width){ Color.new(0,0,0) }
+      Array.new(@width) { Color.new(0, 0, 0) }
     end
   end
 

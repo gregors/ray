@@ -22,7 +22,7 @@ class PPM
 
   def initialize(@canvas : Canvas)
     @max = 255
-    @lines = [ "P3", "#{@canvas.width} #{@canvas.height}", @max.to_s]
+    @lines = ["P3", "#{@canvas.width} #{@canvas.height}", @max.to_s]
 
     lines = @canvas.canvas.map do |line|
       converted = convert_color_to_number_string(line)
